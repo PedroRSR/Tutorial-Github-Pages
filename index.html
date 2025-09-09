@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Meu Site no GitHub Pages</title>
+    <meta name="description" content="Um site simples para testar o GitHub Pages." />
+    <meta name="author" content="Seu Nome" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Meu Site no GitHub Pages" />
+    <meta property="og:description" content="Um site simples e responsivo, perfeito para começar." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23000000'/><text x='50' y='60' font-size='52' text-anchor='middle' fill='white'>★</text></svg>">
+
+    <style>
+      :root{
+        --bg: #0b0e14;        /* fundo escuro elegante */
+        --panel: #111827;     /* painéis/cards */
+        --muted: #9ca3af;     /* texto secundário */
+        --text: #e5e7eb;      /* texto principal */
+        --brand: #60a5fa;     /* azul suave */
+        --brand-2: #a78bfa;   /* roxo suave */
+        --radius: 1.25rem;
+        --shadow: 0 10px 30px rgba(0,0,0,.35);
+      }
+      *{box-sizing:border-box}
+      html,body{height:100%}
+      body{
+        margin:0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+          Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 800px at 10% 10%, rgba(96,165,250,.12), transparent),
+                    radial-gradient(900px 700px at 90% 10%, rgba(167,139,250,.10), transparent),
+                    var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a{color:var(--brand); text-decoration:none}
+      a:hover{text-decoration:underline}
+
+      /* Layout util */
+      .container{max-width: 1100px; margin: 0 auto; padding: 0 1.2rem}
+      .section{padding: 72px 0}
+
+      /* Header */
+      header{
+        position: sticky; top: 0; z-index: 50;
+        backdrop-filter: blur(8px);
+        background: linear-gradient(to bottom, rgba(11,14,20,.9), rgba(11,14,20,.6));
+        border-bottom: 1px solid rgba(255,255,255,.06);
+      }
+      .nav{display:flex; align-items:center; justify-content:space-between; padding: .9rem 0}
+      .logo{display:flex; align-items:center; gap:.7rem; font-weight:700}
+      .logo .badge{width:28px; height:28px; display:grid; place-items:center; border-radius:14px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow: var(--shadow)}
+      .nav a{margin-left:1rem; font-weight:600; opacity:.9}
+      .nav a:hover{opacity:1}
+
+      /* Hero */
+      .hero{display:grid; grid-template-columns: 1.15fr 1fr; gap: 2rem; align-items:center; padding-top: 36px}
+      .hero h1{font-size: clamp(2rem, 4.8vw, 3.5rem); line-height:1.15; margin:.2rem 0 1rem}
+      .hero p{font-size: 1.1rem; color: var(--muted)}
+      .cta{display:flex; gap:.8rem; margin-top:1.2rem}
+      .btn{display:inline-block; padding:.8rem 1rem; border-radius: calc(var(--radius) - .5rem); font-weight:700; border:1px solid transparent}
+      .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:white; box-shadow: var(--shadow)}
+      .btn.ghost{border-color: rgba(255,255,255,.12); color:var(--text); background: rgba(255,255,255,.02)}
+
+      .card{
+        background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: var(--radius);
+        padding: 1.2rem;
+        box-shadow: var(--shadow);
+      }
+
+      /* Grid de features */
+      .features{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; margin-top: 1rem}
+      .feature h3{margin:.2rem 0 .4rem}
+      .feature p{color:var(--muted); font-size:.98rem}
+
+      /* Projetos */
+      .projects{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1rem}
+      .project{min-height: 160px}
+
+      /* Footer */
+      footer{border-top:1px solid rgba(255,255,255,.08); padding: 32px 0; color:var(--muted); font-size:.95rem}
+
+      /* Responsivo */
+      @media (max-width: 860px){
+        .hero{grid-template-columns: 1fr}
+        .nav a{margin-left:.6rem}
+        .features{grid-template-columns: 1fr}
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="logo">
+          <span class="badge" aria-hidden="true">★</span>
+          <span>Meu Site</span>
+        </div>
+        <nav aria-label="Principal">
+          <a href="#sobre">Sobre</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="container hero section" id="inicio">
+        <div>
+          <h1>Olá, mundo! 👋<br />Este é meu site no <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">GitHub Pages</span>.</h1>
+          <p>Um template limpo, sem dependências externas, pronto para ser publicado como <strong>página estática</strong>. Edite os textos, cores e seções como quiser.</p>
+          <div class="cta">
+            <a class="btn primary" href="#projetos">Ver projetos</a>
+            <a class="btn ghost" href="#sobre">Saiba mais</a>
+          </div>
+        </div>
+        <div class="card" role="img" aria-label="Ilustração decorativa">
+          <svg viewBox="0 0 600 360" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0%" stop-color="#60a5fa"/>
+                <stop offset="100%" stop-color="#a78bfa"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="600" height="360" fill="none" stroke="url(#g)" rx="20" opacity=".5"/>
+            <g transform="translate(60,40)">
+              <rect width="480" height="40" rx="10" fill="url(#g)" opacity=".25"/>
+              <rect y="70" width="340" height="24" rx="8" fill="url(#g)" opacity=".35"/>
+              <rect y="110" width="420" height="24" rx="8" fill="url(#g)" opacity=".2"/>
+              <rect y="150" width="260" height="24" rx="8" fill="url(#g)" opacity=".2"/>
+              <rect y="210" width="480" height="100" rx="16" fill="url(#g)" opacity=".12"/>
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+      <section class="section" id="sobre">
+        <div class="container">
+          <div class="card">
+            <h2>Sobre este template</h2>
+            <p>Você está vendo um arquivo <code>index.html</code> único, com HTML + CSS puro. É ideal para testar o GitHub Pages sem configurações complexas. A estrutura usa seções semânticas, foco em acessibilidade e um visual moderno.</p>
+            <div class="features">
+              <div class="feature">
+                <h3>⚡️ Rápido</h3>
+                <p>Sem frameworks ou builds. Abra, edite e publique.</p>
+              </div>
+              <div class="feature">
+                <h3>📱 Responsivo</h3>
+                <p>Layout adaptável para celular, tablet e desktop.</p>
+              </div>
+              <div class="feature">
+                <h3>🧩 Fácil de editar</h3>
+                <p>Troque textos, cores e links direto no arquivo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJETOS -->
+      <section class="section" id="projetos">
+        <div class="container">
+          <h2>Projetos</h2>
+          <p class="muted">Alguns cartões de exemplo para você substituir pelos seus.</p>
+          <div class="projects">
+            <article class="card project">
+              <h3>Projeto A</h3>
+              <p>Descrição curta do projeto. <a href="#">Ver mais</a></p>
+            </article>
+            <article class="card project">
+              <h3>Projeto B</h3>
+              <p>Descrição curta do projeto. <a href="#">Ver mais</a></p>
+            </article>
+            <article class="card project">
+              <h3>Projeto C</h3>
+              <p>Descrição curta do projeto. <a href="#">Ver mais</a></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section class="section" id="contato">
+        <div class="container">
+          <div class="card">
+            <h2>Contato</h2>
+            <p>Quer falar comigo? Envie um e-mail para <a href="mailto:voce@example.com">voce@example.com</a> ou me ache nas redes:</p>
+            <p>
+              <a href="#" aria-label="GitHub">GitHub</a> •
+              <a href="#" aria-label="LinkedIn">LinkedIn</a> •
+              <a href="#" aria-label="Twitter/X">Twitter</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <span>© <span id="year"></span> Seu Nome. Feito com ♥ e publicado no GitHub Pages.</span>
+      </div>
+    </footer>
+
+    <script>
+      // Atualiza ano automaticamente
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
